@@ -1,6 +1,0 @@
-server:
-  port: 7072
-
-spring:
-  application:
-    name: redismanager
