@@ -4,9 +4,9 @@ server:
 spring:
   application:
     name: redismanager
-  redis:
-    cluster:
-      nodes:
-      - 127.0.0.1:7000
-      - 127.0.0.1:7001
-      - 127.0.0.1:7002
+  #redis:
+   # cluster:
+    #  nodes:
+     # - 127.0.0.1:7000
+     # - 127.0.0.1:7001
+     # - 127.0.0.1:7002
