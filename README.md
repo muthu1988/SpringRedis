@@ -1,2 +1,2 @@
 # SpringRedis
-Spring Boot Service - Get and Post Data to a Redis Server
+Spring Boot Service - CRUD on a Redis Server
