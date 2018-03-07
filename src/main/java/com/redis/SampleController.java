@@ -2,6 +2,7 @@ package com.redis;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,8 +22,14 @@ public class SampleController {
 	
 	@PostMapping
 	private String postValue(@RequestBody RedisRequest redisRequest){
-		template.opsForValue().append(redisRequest.getKey(), redisRequest.getValue());
+		template.opsForValue().set(redisRequest.getKey(), redisRequest.getValue());
 		return template.boundValueOps(redisRequest.getKey()).get();
+	}
+	
+	@DeleteMapping
+	private String deleteValue(@RequestBody RedisRequest redisRequest){
+		template.delete(redisRequest.getKey());
+		return "Deleted";
 	}
 
 }
